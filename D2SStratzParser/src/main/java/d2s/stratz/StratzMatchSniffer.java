@@ -121,7 +121,7 @@ public class StratzMatchSniffer {
 		try {
 			
 			jNode = mapper.readTree(json);
-			result.setDate(jNode.get("startDateTime").asText());
+			result.setDate(jNode.get("startDateTime").asLong());
 			result.setMatchId(jNode.get("id").asLong());
 			
 			var dire = new ArrayList<String>();
@@ -147,6 +147,7 @@ public class StratzMatchSniffer {
 		} catch (JsonProcessingException e1) {
 			e1.printStackTrace();
 		}
+		result.setParsed(true);
 		
 		return result;
 	}

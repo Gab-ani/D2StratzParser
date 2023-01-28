@@ -22,12 +22,12 @@ public class StratzParserController {
 	@Autowired
 	StratzMatchSniffer stratzSniffer;
 	
-	@GetMapping("/d2stratz")
+	@GetMapping("/")
 	public String defaultAnswer() {
 		return "hi, I can request info from https://stratz.com via its API and return a huge JSON containing all info stratz has about a certain match";
 	}
 	
-	@GetMapping("/d2stratz/{id}")
+	@GetMapping("/{id}")
 	@ResponseBody
 	public Match returnMatchInfo(@PathVariable("id") long id) throws CorruptedMatchException {
 		
