@@ -35,7 +35,7 @@ public class StratzParserController {
 		try {
 			result = stratzSniffer.formById(id);
 		} catch (CorruptedMatchException e) {
-			return Match.corrupted();
+			return Match.corrupted(id);
 		}
 		
 		return result;

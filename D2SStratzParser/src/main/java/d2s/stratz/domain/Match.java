@@ -68,10 +68,10 @@ public class Match {
 		this.parsed = parsed;
 	}
 
-	public static Match corrupted() {
+	public static Match corrupted(long id) {
 		Match corrupted = new Match();
 		corrupted.date = -1;
-		corrupted.matchId = -1;
+		corrupted.matchId = id;
 		corrupted.winner = "none";
 		corrupted.setParsed(false);
 		return corrupted;
