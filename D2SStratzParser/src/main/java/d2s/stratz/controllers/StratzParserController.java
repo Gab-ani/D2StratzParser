@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
 import d2s.stratz.CorruptedMatchException;
 import d2s.stratz.StratzMatchSniffer;
 import d2s.stratz.domain.Match;
@@ -37,7 +38,6 @@ public class StratzParserController {
 		} catch (CorruptedMatchException e) {
 			return Match.corrupted(id);
 		}
-		
 		return result;
 	}
 	
